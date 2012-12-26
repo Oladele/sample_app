@@ -11,6 +11,13 @@ describe "UserPages" do
 	  	it { should have_selector('h1',    text: user.name) }
 	  	it { should have_selector('title', text: user.name) }
 	end
+
+    describe "signup page" do
+        before  { visit signup_path }
+        
+        it { should have_selector('h1', text: 'Sign Up') }
+        it { should have_selector('title', text: full_title('Sign Up'))}
+    end
 		
 	describe "signup" do
 		before	{ visit signup_path }
