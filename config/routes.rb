@@ -1,4 +1,7 @@
 SampleApp::Application.routes.draw do
+  resources :exercise_categories
+
+
   resources :users do 
     member do
       get :following, :followers
