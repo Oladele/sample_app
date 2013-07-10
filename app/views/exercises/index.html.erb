@@ -1,3 +1,24 @@
+<% provide(:title, 'Exercises') %>
+
+<h1>Exercises</h1>
+
+<div class="row">
+  <div class="span8">
+    <h3>Exercises(<%= @exercises.count %>)</h3>
+    <% if @exercises.any? %>      
+      <div class="row">
+          <div class="span6">
+            <%= render @exercises %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<h3>
+<%= link_to "Add New Exercise", new_exercise_path, class: "btn btn-large" %>
+</h3>
+
 <h1>Listing exercises</h1>
 
 <table>
