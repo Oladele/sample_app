@@ -1,6 +1,6 @@
 <a href="<%= user_path(current_user) %>">
-	<%= gravatar_for current_user, size: 52 %>
-</a>
+		<%= gravatar_for current_user, size: 52 %>
+	</a>
 <h1>
 	<%= current_user.name %>
 </h1>
@@ -9,4 +9,10 @@
 </span>
 <span>
 	<%= pluralize(current_user.microposts.count, "microposts") %>
+</span>
+<span>
+	<ul class="nav nav-tabs">
+	  <li><a href="#home" data-toggle="tab">Home</a></li>
+	  <li><a href="#profile" data-toggle="tab">Profile</a></li>
+	</ul>
 </span>
