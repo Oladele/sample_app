@@ -1,0 +1,65 @@
+<%= form_for(@exercise) do |f| %>
+  <% if @exercise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+
+      <ul>
+      <% @exercise.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :rep_distance %><br />
+    <%= f.text_field :rep_distance %>
+  </div>
+  <div class="field">
+    <%= f.label :dfactor_body_up %><br />
+    <%= f.text_field :dfactor_body_up %>
+  </div>
+  <div class="field">
+    <%= f.label :dfactor_body_down %><br />
+    <%= f.text_field :dfactor_body_down %>
+  </div>
+  <div class="field">
+    <%= f.label :dfactor_body_lat %><br />
+    <%= f.text_field :dfactor_body_lat %>
+  </div>
+  <div class="field">
+    <%= f.label :dfactor_body_static_tension_max %><br />
+    <%= f.text_field :dfactor_body_static_tension_max %>
+  </div>
+  <div class="field">
+    <%= f.label :dfactor_body_static_tension_min %><br />
+    <%= f.text_field :dfactor_body_static_tension_min %>
+  </div>
+  <div class="field">
+    <%= f.label :wfactor_body_up %><br />
+    <%= f.text_field :wfactor_body_up %>
+  </div>
+  <div class="field">
+    <%= f.label :wfactor_body_down %><br />
+    <%= f.text_field :wfactor_body_down %>
+  </div>
+  <div class="field">
+    <%= f.label :wfactor_body_lat %><br />
+    <%= f.text_field :wfactor_body_lat %>
+  </div>
+  <div class="field">
+    <%= f.label :wfactor_body_static_tension_max %><br />
+    <%= f.text_field :wfactor_body_static_tension_max %>
+  </div>
+  <div class="field">
+    <%= f.label :wfactor_body_static_tension_min %><br />
+    <%= f.text_field :wfactor_body_static_tension_min %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

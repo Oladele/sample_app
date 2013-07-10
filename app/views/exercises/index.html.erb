@@ -1,0 +1,45 @@
+<h1>Listing exercises</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Rep distance</th>
+    <th>Dfactor body up</th>
+    <th>Dfactor body down</th>
+    <th>Dfactor body lat</th>
+    <th>Dfactor body static tension max</th>
+    <th>Dfactor body static tension min</th>
+    <th>Wfactor body up</th>
+    <th>Wfactor body down</th>
+    <th>Wfactor body lat</th>
+    <th>Wfactor body static tension max</th>
+    <th>Wfactor body static tension min</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @exercises.each do |exercise| %>
+  <tr>
+    <td><%= exercise.name %></td>
+    <td><%= exercise.rep_distance %></td>
+    <td><%= exercise.dfactor_body_up %></td>
+    <td><%= exercise.dfactor_body_down %></td>
+    <td><%= exercise.dfactor_body_lat %></td>
+    <td><%= exercise.dfactor_body_static_tension_max %></td>
+    <td><%= exercise.dfactor_body_static_tension_min %></td>
+    <td><%= exercise.wfactor_body_up %></td>
+    <td><%= exercise.wfactor_body_down %></td>
+    <td><%= exercise.wfactor_body_lat %></td>
+    <td><%= exercise.wfactor_body_static_tension_max %></td>
+    <td><%= exercise.wfactor_body_static_tension_min %></td>
+    <td><%= link_to 'Show', exercise %></td>
+    <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
+    <td><%= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Exercise', new_exercise_path %>

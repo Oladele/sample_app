@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @exercise.name %>
+</p>
+
+<p>
+  <b>Rep distance:</b>
+  <%= @exercise.rep_distance %>
+</p>
+
+<p>
+  <b>Dfactor body up:</b>
+  <%= @exercise.dfactor_body_up %>
+</p>
+
+<p>
+  <b>Dfactor body down:</b>
+  <%= @exercise.dfactor_body_down %>
+</p>
+
+<p>
+  <b>Dfactor body lat:</b>
+  <%= @exercise.dfactor_body_lat %>
+</p>
+
+<p>
+  <b>Dfactor body static tension max:</b>
+  <%= @exercise.dfactor_body_static_tension_max %>
+</p>
+
+<p>
+  <b>Dfactor body static tension min:</b>
+  <%= @exercise.dfactor_body_static_tension_min %>
+</p>
+
+<p>
+  <b>Wfactor body up:</b>
+  <%= @exercise.wfactor_body_up %>
+</p>
+
+<p>
+  <b>Wfactor body down:</b>
+  <%= @exercise.wfactor_body_down %>
+</p>
+
+<p>
+  <b>Wfactor body lat:</b>
+  <%= @exercise.wfactor_body_lat %>
+</p>
+
+<p>
+  <b>Wfactor body static tension max:</b>
+  <%= @exercise.wfactor_body_static_tension_max %>
+</p>
+
+<p>
+  <b>Wfactor body static tension min:</b>
+  <%= @exercise.wfactor_body_static_tension_min %>
+</p>
+
+
+<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
+<%= link_to 'Back', exercises_path %>

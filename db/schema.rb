@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130707143834) do
+ActiveRecord::Schema.define(:version => 20130710183411) do
 
   create_table "exercise_categories", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,25 @@ ActiveRecord::Schema.define(:version => 20130707143834) do
   end
 
   add_index "exercise_categories", ["name"], :name => "index_exercise_categories_on_name", :unique => true
+
+  create_table "exercises", :force => true do |t|
+    t.string   "name"
+    t.float    "rep_distance",                    :default => 0.0
+    t.float    "dfactor_body_up",                 :default => 0.0
+    t.float    "dfactor_body_down",               :default => 0.0
+    t.float    "dfactor_body_lat",                :default => 0.0
+    t.float    "dfactor_body_static_tension_max", :default => 0.0
+    t.float    "dfactor_body_static_tension_min", :default => 0.0
+    t.float    "wfactor_body_up",                 :default => 0.0
+    t.float    "wfactor_body_down",               :default => 0.0
+    t.float    "wfactor_body_lat",                :default => 0.0
+    t.float    "wfactor_body_static_tension_max", :default => 0.0
+    t.float    "wfactor_body_static_tension_min", :default => 0.0
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
+  end
+
+  add_index "exercises", ["name"], :name => "index_exercises_on_name", :unique => true
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
