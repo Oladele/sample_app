@@ -3,6 +3,8 @@ require 'spec_helper'
 describe ExerciseCategory do
   
   #let(:user) { FactoryGirl.create(:user) }
+  #before { @micropost = user.microposts.build(content: "Lorem ipsum") }
+  
   #look into changing @exercise_category to use use FactoryGirl
   #this should change @exer* to exer* - No instance var req'd
   before { @exercise_category = ExerciseCategory.new(name: "Lorem ipsum") }
