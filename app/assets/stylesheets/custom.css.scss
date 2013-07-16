@@ -47,7 +47,7 @@ h1{
 	font-size: 3em;
 	letter-spacing: -2px;
 	margin-bottom: 30px;
-	text-aling: center;
+	text-align: center;
 }
 
 h2{
@@ -247,4 +247,14 @@ aside {
 		height: 100px;
 		margin-bottom: 5px;
 	}
+}
+
+/*workouts*/
+
+.my_tabs_content{
+	/*clear: both;*/
+	/*float: left;*/
+	/*width: 100%;*/
+	margin-top: 45px;
+	@include box_sizing;
 }

@@ -9,4 +9,17 @@ module ApplicationHelper
 			"#{base_title} | #{page_title}"
 		end
 	end
+
+	#Returns array of 7 dates starting with Monday prior to date passed
+	def week_of(date)
+		week = []
+		day = date.beginning_of_week
+		week << day
+			1.upto(6) do
+				day = day.next_day
+				week << day 
+			end
+      return week
+  end
+
 end

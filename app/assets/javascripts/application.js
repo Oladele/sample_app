@@ -15,3 +15,4 @@
 //= require_tree .
 //= require bootstrap
 //= require jquery-ui
+//= require moment.min
