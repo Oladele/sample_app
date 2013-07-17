@@ -1,7 +1,5 @@
 
-<%= form_tag( "/home", method: "get" ) do %>
   <%= label_tag( :myDatePicker, "Enter date to view workouts for that week" ) %>
   <%= text_field_tag(:myDatePicker, params[:myDatePicker]) %>
-  <%= submit_tag("Submit", name: nil ) %>
-<% end %>
+  
 <%= render 'shared/week' %>
