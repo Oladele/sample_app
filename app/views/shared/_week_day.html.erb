@@ -1,7 +1,7 @@
 <li>
 	<a href=<%='#'+ week_day.strftime("%a")%> data-toggle="tab">
 		<span id= <%='day'+week_day.strftime("%a")%> class="content">
-			<%= "#{week_day.strftime("%a")}(#{week_day.to_formatted_s(:short)})" %>
+			<%= "#{week_day.strftime("%a")}, #{week_day.to_formatted_s(:short)}" %>
 		</span>
 	</a>		
 </li>

@@ -8,25 +8,25 @@ $(function() {
   $("#myDatePicker").change(function(){
   	days_array = myFunction($("#myDatePicker").val());
   	$("#dayMon").text(
-  		days_array[1]
+  		days_array[1].format("ddd, D MMM")
   	);	
   	$("#dayTue").text(
-  		days_array[2]
+  		days_array[2].format("ddd, D MMM")
   	);	
   	$("#dayWed").text(
-  		days_array[3]
+  		days_array[3].format("ddd, D MMM")
   	);	
   	$("#dayThu").text(
-  		days_array[4]
+  		days_array[4].format("ddd, D MMM")
   	);	
   	$("#dayFri").text(
-  		days_array[5]
+  		days_array[5].format("ddd, D MMM")
   	);	
   	$("#daySat").text(
-  		days_array[6]
+  		days_array[6].format("ddd, D MMM")
   	);
   	$("#daySun").text(
-  		days_array[7]
+  		days_array[7].format("ddd, D MMM")
   	);		
   });
 });
