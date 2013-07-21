@@ -1,9 +1,7 @@
 SampleApp::Application.routes.draw do
   resources :exercises
-
-
   resources :exercise_categories
-
+  resources :workouts
 
   resources :users do 
     member do

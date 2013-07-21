@@ -7,6 +7,7 @@ class StaticPagesController < ApplicationController
   		@micropost = current_user.microposts.build
   		@feed_items = current_user.feed.paginate(page: params[:page])
       @week_days = week_of(Date.today)
+      @workouts = current_user.workouts
       
       #Partial implementation of non-JS week/date selector 
       #used form_tag and submit_tag to post http GET

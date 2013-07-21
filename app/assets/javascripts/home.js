@@ -8,30 +8,34 @@ $(function() {
   });
   $("#myDatePicker").change(function(){
   	days_array = myFunction($("#myDatePicker").val());
-  	$("#dayMon").text(
+  	$(".dayMon").text(
+  		days_array[0].format("ddd, D MMM")
+  	);	
+  	$(".dayTue").text(
   		days_array[1].format("ddd, D MMM")
   	);	
-  	$("#dayTue").text(
+  	$(".dayWed").text(
   		days_array[2].format("ddd, D MMM")
   	);	
-  	$("#dayWed").text(
+  	$(".dayThu").text(
   		days_array[3].format("ddd, D MMM")
   	);	
-  	$("#dayThu").text(
+  	$(".dayFri").text(
   		days_array[4].format("ddd, D MMM")
   	);	
-  	$("#dayFri").text(
+  	$(".daySat").text(
   		days_array[5].format("ddd, D MMM")
-  	);	
-  	$("#daySat").text(
-  		days_array[6].format("ddd, D MMM")
   	);
-  	$("#daySun").text(
-  		days_array[7].format("ddd, D MMM")
+  	$(".daySun").text(
+  		days_array[6].format("ddd, D MMM")
   	);		
   });
 });
 
+//returns array of 7 calender days where
+//array[1] = Monday of the week of "date" and
+//...
+//array[7] = Sunday of the week of "date"
 function myFunction(date)
 {
 var day = moment(date, "MM-DD-YYYY").day();
@@ -44,13 +48,13 @@ else{
 	var days_since_monday = 6;
 }
 
-week_days[1] = new moment(date).add('d',-days_since_monday);
-week_days[2] = new moment(date).add('d',-days_since_monday + 1);
-week_days[3] = new moment(date).add('d',-days_since_monday + 2);
-week_days[4] = new moment(date).add('d',-days_since_monday + 3);
-week_days[5] = new moment(date).add('d',-days_since_monday + 4);
-week_days[6] = new moment(date).add('d',-days_since_monday + 5);
-week_days[7] = new moment(date).add('d',-days_since_monday + 6);
+week_days[0] = new moment(date).add('d',-days_since_monday);
+week_days[1] = new moment(date).add('d',-days_since_monday + 1);
+week_days[2] = new moment(date).add('d',-days_since_monday + 2);
+week_days[3] = new moment(date).add('d',-days_since_monday + 3);
+week_days[4] = new moment(date).add('d',-days_since_monday + 4);
+week_days[5] = new moment(date).add('d',-days_since_monday + 5);
+week_days[6] = new moment(date).add('d',-days_since_monday + 6);
 
 return week_days;
 }

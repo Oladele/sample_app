@@ -1,0 +1,19 @@
+<% week_days.each do |week_day| %>
+	<div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" 
+      		data-parent="#accordion4" 
+      		href= <%= '#collapse'+week_day.strftime("%a") %>>
+      		<span class= <%='day'+week_day.strftime("%a")%>>
+        		<%= "#{week_day.strftime("%a")}, #{week_day.to_formatted_s(:short)}" %>
+        	</span>
+      </a>
+    </div>
+    <div id= <%= 'collapse'+week_day.strftime("%a") %>
+    			class="accordion-body collapse">
+      <div class="accordion-inner">
+        Anim pariatur cliche...
+      </div>
+    </div>
+  </div>
+<% end %>

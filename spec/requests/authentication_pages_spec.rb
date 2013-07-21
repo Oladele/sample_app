@@ -140,6 +140,8 @@ describe "Authentication" do
     describe "as non-admin user" do
       let(:user) {FactoryGirl.create(:user) }
       let(:non_admin) { FactoryGirl.create(:user) }
+      let(:exercise) { FactoryGirl.create(:exercise) }
+
 
       before { sign_in non_admin }
 
@@ -147,6 +149,15 @@ describe "Authentication" do
         before { delete user_path(user) }
         specify { response.should redirect_to(root_path) }
       end
+
+      describe "visting edit exercise page" do
+        before { visit edit_exercise_path(exercise) }
+        it { should_not have_selector('title', text: full_title('Edit Exercise')) }
+      end
+
+      #TODO Add more tests for AAA of exercises
+      #TODO Add more tests for AAA of workouts
+
     end
   end
 end

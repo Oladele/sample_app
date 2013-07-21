@@ -1,0 +1,10 @@
+<li id="<%= workout.id %>">
+		<span class="content">
+			<%= workout.name %>
+		</span>
+	<% if current_user?(workout.user) %>
+		<%= link_to "delete", workout, method: :delete,
+											data: { confirm: "You sure?"},
+											title: workout.name %>
+	<% end %>
+</li>

@@ -1,6 +1,8 @@
 class ExercisesController < ApplicationController
   # GET /exercises
   # GET /exercises.json
+  before_filter :admin_user, only: [:edit, :update, :index, :destroy]
+
   def index
     @exercises = Exercise.all
 
@@ -80,4 +82,10 @@ class ExercisesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+    def admin_user
+      redirect_to(root_path) unless  current_user.admin?
+    end
 end

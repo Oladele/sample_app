@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :exercise do
-    name "MyString"
+    name "Exercise1"
     rep_distance 1.5
     dfactor_body_up 1.5
     dfactor_body_down 1.5

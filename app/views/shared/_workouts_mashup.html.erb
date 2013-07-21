@@ -3,3 +3,15 @@
   <%= text_field_tag(:myDatePicker, params[:myDatePicker]) %>
   
 <%= render 'shared/week' %>
+
+	<% @workouts.each do |workout| %>
+		<span class="content">
+			<%= workout.name %>
+			<%= workout.date %>
+			<% if current_user?(workout.user) %>
+				<%= link_to "delete", workout, method: :delete,
+													data: { confirm: "You sure?"},
+													title: workout.name %>
+			<% end %>
+		</span>
+	<% end %>

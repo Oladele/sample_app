@@ -4,6 +4,8 @@ namespace :db do
     make_users
     make_microposts
     make_relationships
+    make_exercises
+    make_workouts
   end
 end
 
@@ -39,4 +41,26 @@ def make_relationships
   followers      = users[3..40]
   followed_users.each { |followed| user.follow!(followed) }
   followers.each      { |follower| follower.follow!(user) }
+end
+
+def make_exercises
+   Exercise.create!(name:"Barbell Benchpress")
+   Exercise.create!(name:"Dumbell Benchpress")
+   Exercise.create!(name:"Squat")
+   Exercise.create!(name:"Deadlift")
+   Exercise.create!(name:"Shoulder press")
+end
+
+def make_workouts
+  users = User.all(limit: 6)
+  time_in_weeks = 3
+  0.upto(time_in_weeks) do |number_of|
+    1.upto(2) do |counter|
+      name = "MY #{counter.ordinalize} WORKOUT"
+      date = number_of.weeks.ago - (counter*counter).days
+      users.each do |user| 
+        user.workouts.create!(name: name, date: date)
+      end
+    end    
+  end 
 end
