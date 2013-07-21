@@ -1,1 +1,74 @@
-alert('Hello from AJAX');
+//alert('<%= @date_selected %>');
+
+//date_DATE_JS = new Date(1999, 9, 25);
+//days_array = myFunction($("#myDatePicker").val());
+days_array = myFunction('<%= @date_selected %>');
+$(".dayMon").text(
+	days_array[0].format("ddd, D MMM").concat(
+	<% wo = @AR.where("date = ?", @week_days[0]) %>
+  ' <%= wo.first.nil? ? "no workout" : wo.first.name %>').concat(
+  ' <%= wo.first.nil? ? @week_days[0] : wo.first.date %>')
+);	
+$(".dayTue").text(
+	days_array[1].format("ddd, D MMM").concat(
+	<% wo = @AR.where("date = ?", @week_days[1]) %>
+  ' <%= wo.first.nil? ? "no workout" : wo.first.name %>').concat(
+  ' <%= wo.first.nil? ? @week_days[1] : wo.first.date %>')
+);	
+$(".dayWed").text(
+	days_array[2].format("ddd, D MMM").concat(
+	<% wo = @AR.where("date = ?", @week_days[2]) %>
+  ' <%= wo.first.nil? ? "no workout" : wo.first.name %>').concat(
+  ' <%= wo.first.nil? ? @week_days[2] : wo.first.date %>')
+);	
+$(".dayThu").text(
+	days_array[3].format("ddd, D MMM").concat(
+	<% wo = @AR.where("date = ?", @week_days[3]) %>
+  ' <%= wo.first.nil? ? "no workout" : wo.first.name %>').concat(
+  ' <%= wo.first.nil? ? @week_days[3] : wo.first.date %>')
+);	
+$(".dayFri").text(
+	days_array[4].format("ddd, D MMM").concat(
+	<% wo = @AR.where("date = ?", @week_days[4]) %>
+  ' <%= wo.first.nil? ? "no workout" : wo.first.name %>').concat(
+  ' <%= wo.first.nil? ? @week_days[4] : wo.first.date %>')
+);	
+$(".daySat").text(
+	days_array[5].format("ddd, D MMM").concat(
+	<% wo = @AR.where("date = ?", @week_days[5]) %>
+  ' <%= wo.first.nil? ? "no workout" : wo.first.name %>').concat(
+  ' <%= wo.first.nil? ? @week_days[5] : wo.first.date %>')
+);
+$(".daySun").text(
+	days_array[6].format("ddd, D MMM").concat(
+	<% wo = @AR.where("date = ?", @week_days[6]) %>
+  ' <%= wo.first.nil? ? "no workout" : wo.first.name %>').concat(
+  ' <%= wo.first.nil? ? @week_days[6] : wo.first.date %>')
+);	
+
+//returns array of 7 calender days where
+//array[1] = Monday of the week of "date" and
+//...
+//array[7] = Sunday of the week of "date"
+function myFunction(date)
+{
+var day = moment(date, "MM-DD-YYYY").day();
+var week_days = Array(7);
+
+if(day>0){
+	var days_since_monday = (day-1);
+}
+else{
+	var days_since_monday = 6;
+}
+
+week_days[0] = new moment(date).add('d',-days_since_monday);
+week_days[1] = new moment(date).add('d',-days_since_monday + 1);
+week_days[2] = new moment(date).add('d',-days_since_monday + 2);
+week_days[3] = new moment(date).add('d',-days_since_monday + 3);
+week_days[4] = new moment(date).add('d',-days_since_monday + 4);
+week_days[5] = new moment(date).add('d',-days_since_monday + 5);
+week_days[6] = new moment(date).add('d',-days_since_monday + 6);
+
+return week_days;
+}

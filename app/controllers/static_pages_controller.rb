@@ -6,9 +6,18 @@ class StaticPagesController < ApplicationController
   	if signed_in?
   		@micropost = current_user.microposts.build
   		@feed_items = current_user.feed.paginate(page: params[:page])
-      @week_days = week_of(Date.today)
+      @week_days =  params[:date_selected].nil? ?
+                    week_of(Date.today) :
+                    week_of(mdySTRING_to_DATE(params[:date_selected]))
       @workouts = current_user.workouts
       @AR = Workout.where("user_id = ?", current_user.id)
+      @date_selected = params[:date_selected]
+      
+
+      respond_to do |format|
+        format.html
+        format.js
+      end
       
       #Partial implementation of non-JS week/date selector 
       #used form_tag and submit_tag to post http GET
@@ -33,6 +42,5 @@ class StaticPagesController < ApplicationController
 
   def contact
   end    
-    
   
 end

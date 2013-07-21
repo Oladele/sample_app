@@ -22,4 +22,17 @@ module ApplicationHelper
       return week
   end
 
+  def mdySTRING_to_HASH(mdy)
+  	arr = mdy.split('/')
+  	{ year: arr[2].to_i, month: arr[0].to_i, day: arr[1].to_i }
+  end
+
+  def mdySTRING_to_DATE (mdyStr)
+    date_selected_HASH = mdySTRING_to_HASH(mdyStr)
+    Date.new(date_selected_HASH[:year],
+                          date_selected_HASH[:month],
+                          date_selected_HASH[:day]
+            )
+  end
+
 end
