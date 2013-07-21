@@ -6,6 +6,9 @@
       		href= <%= '#collapse'+week_day.strftime("%a") %>>
       		<span class= <%='day'+week_day.strftime("%a")%>>
         		<%= "#{week_day.strftime("%a")}, #{week_day.to_formatted_s(:short)}" %>
+            <% wo = @AR.where("date = ?", week_day) %>
+            <%= wo.first.nil? ? "no workout" : wo.first.name %>
+            <%= wo.first.nil? ? "no workout" : wo.first.date %>
         	</span>
       </a>
     </div>

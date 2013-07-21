@@ -5,6 +5,7 @@ describe "Exercise pages" do
   subject { page }
 
   let(:user){ FactoryGirl.create(:user) }
+  before { user.toggle!(:admin) }
   before { sign_in user }
 
   describe "Exercise creation" do

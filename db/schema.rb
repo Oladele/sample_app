@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130710204846) do
+ActiveRecord::Schema.define(:version => 20130721094650) do
 
   create_table "exercise_categories", :force => true do |t|
     t.string   "name"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20130710204846) do
   create_table "workouts", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.datetime "date"
+    t.date     "date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -54,10 +54,10 @@ end
 def make_workouts
   users = User.all(limit: 6)
   time_in_weeks = 3
-  0.upto(time_in_weeks) do |number_of|
+  0.upto(time_in_weeks) do |weeks|
     1.upto(2) do |counter|
       name = "MY #{counter.ordinalize} WORKOUT"
-      date = number_of.weeks.ago - (counter*counter).days
+      date = Date.today.weeks_ago(weeks) - (counter*counter).days
       users.each do |user| 
         user.workouts.create!(name: name, date: date)
       end
